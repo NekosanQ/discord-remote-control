@@ -7,7 +7,7 @@ import queue
 import os
 from dotenv import load_dotenv
 
-load_dotenv('.env')
+load_dotenv(".env")
 
 # TOKEN取得
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
@@ -59,18 +59,18 @@ def gui():
         channel_id = text_1.get()
         message = text_2.get()
         print("チャンネルID: ", channel_id)
-        print('送信したメッセージ: ', message)
+        print("送信したメッセージ: ", message)
         message_queue.put((channel_id, message))
 
     def set_clear():
-        text_1.set('')
-        text_2.set('')
+        text_1.set("")
+        text_2.set("")
 
     win = tk.Tk()
     win.title("Discord遠隔操作")
 
     # オブジェクトの定義
-    label_1 = tk.Label(win,text= 'チャンネルID')
+    label_1 = tk.Label(win,text= "チャンネルID")
     text_1 = tk.StringVar()
     entry_1 = tk.Entry(win,textvariable=text_1)
 
@@ -78,9 +78,9 @@ def gui():
     text_2 = tk.StringVar()
     entry_2 = tk.Entry(win, textvariable=text_2)
 
-    button_1 = tk.Button(win,text = '送信',command=lambda: get_message())
-    button_2 = tk.Button(win,text = 'クリア',command=lambda:set_clear())
-    button_3 = tk.Button(win,text = 'Quit',command=quit)
+    button_1 = tk.Button(win,text = "送信",command=lambda: get_message())
+    button_2 = tk.Button(win,text = "クリア",command=lambda:set_clear())
+    button_3 = tk.Button(win,text = "Quit",command=quit)
 
     # レイアウト
     label_1.grid(row=0,column=0)
